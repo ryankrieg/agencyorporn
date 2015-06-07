@@ -15,38 +15,52 @@
         });
     }]);
 
-    app.controller('StartCtrl', function($scope, AorP) {
+    app.controller('StartCtrl', function($scope, Question) {
         $scope.state = 'loading';
         $scope.current = {};
 
-        var init = AorP.init();
+        var init = Question.init();
         init.then(function(state) {
             $scope.state = state;
-            $scope.current = AorP.getCurrent();
+            $scope.current = Question.getCurrent();
         }, function(state) {
             $scope.state = state;
         });
     });
 
-    app.controller('QuestionCtrl', function($scope, AorP) {
+    app.controller('QuestionCtrl', function($scope, $routeParams, Image, Question) {
         $scope.loaded = false;
+        $scope.correct = 'unknown';
+        $scope.current = {};
+        $scope.next = {};
+        $scope.image = {};
 
-        var init = AorP.init();
+        var init = Question.init($routeParams.slug);
         init.then(function(state) {
             $scope.state = state;
+            
+            $scope.image = Image.getCurrent();
+            Image.increment();
+
+            $scope.current = Question.getCurrent();
+            $scope.next = Question.getNext();
+            Question.increment();
         }, function(state) {
             $scope.state = state;
         });
+
+        $scope.select = function(selection) {
+            $scope.correct = (selection === $scope.current.answer) ? 'yes' : 'no';
+        };
     });
 
     app.directive('apLoading', function() {
         return {
-            link: function() {console.log('apLoading');},
             templateUrl: '/templates/loading.html'
         };
     });
 
-    app.factory('AorP', ['$http', '$q', function($http, $q) {
+    app.factory('Question', ['$http', '$q', '$timeout', function($http, $q, $timeout) {
         var _loaded = false;
         var _questions = [];
         var _index = 0;
@@ -67,7 +81,9 @@
                             console.log('Setting index from slug');
                             _index = _.findIndex(_questions, { slug: slug }) || 0;
                         }
-                        deferred.resolve('loaded');
+                        $timeout(function() {
+                            deferred.resolve('loaded');
+                        }, 1500);
                     }).error(function(err) {
                         console.log(err);
                         deferred.reject('error');
@@ -87,12 +103,33 @@
                 return _questions[_index];
             },
             getNext: function() {
-                console.log('Returning nextt');
+                console.log('Returning next');
                 var index = _index + 1;
 
                 if (index >= _questions.length) index = 0;
 
                 return _questions[index];
+            }
+        };
+    }]);
+
+    app.factory('Image', [function() {
+        var _index = 0;
+        var _length = 2;
+        var _as = _.shuffle(_.range(_length));
+        var _ps = _.shuffle(_.range(_length));
+
+        return {
+            increment: function() {
+                _index++;
+
+                if (_index >= _length) _index = 0;
+            },
+            getCurrent: function() {
+                return {
+                    a: '/img/a-' + _as[_index] + '.jpg',
+                    p: '/img/p-' + _ps[_index] + '.jpg'
+                };
             }
         };
     }]);

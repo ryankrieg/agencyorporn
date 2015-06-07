@@ -2,14 +2,14 @@
     {
         "title": "Bigham",
         "slug": "bigham",
-        "aorp": "agency",
+        "answer": "agency",
         "url": "www.bighamagency.com",
         "description": "Effective marketing and advertising is built on Awareness, Frequency, and Longevity."
     },
     {
         "title": "All The Rave",
         "slug": "all-the-rave",
-        "aorp": "porn",
+        "answer": "porn",
         "year": "2001",
         "cast": [
             "Chandler",
@@ -21,14 +21,14 @@
     {
         "title": "Bigpie",
         "slug": "bigpie",
-        "aorp": "agency",
+        "answer": "agency",
         "url": "www.bigpie.tv",
         "description": "An interactive / design studio in lovely Venice Beach, California that bring a unique and possionate approach to web development and print."
     },
     {
         "title": "Powder Burns",
         "slug": "powder-burns",
-        "aorp": "porn",
+        "answer": "porn",
         "year": "1971",
         "cast": [
             "Karin Manu",

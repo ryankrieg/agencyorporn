@@ -1,8 +1,67 @@
 <div id="question" data-ng-controller="QuestionCtrl">
   <div data-ng-switch="state">
-    <div data-ng-switch-when="loaded">
+    <div data-ng-switch-when="loaded" class="fade">
+      <div class="question-title">'<span data-ng-bind="current.title"></span>'</div>
+      <div class="question-wrapper">
+        <div class="row">
+          <div class="question-agency large-6 columns" data-ng-switch="correct">
+            <div data-ng-switch-when="unknown">
+              <img class="question-image" data-ng-src="{{ image.a }}" />
+              <div class="button" data-ng-click="select('agency')">AGENCY</div>
+            </div>
+            <div data-ng-switch-default>
+              <div data-ng-switch="current.answer">
+                <div data-ng-switch-when="agency">
+                  <a class="question-url" data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
+                  <div class="question-description" data-ng-bind="current.description"></div>
+                  <a data-ng-href="/#/{{ next.slug }}" class="button">NEXT &gt;</a>
+                </div>
+                <div data-ng-switch-default>
+                  <img class="question-image" data-ng-src="{{ image.a }}" />
+                  <div class="button disabled">AGENCY</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-porn large-6 columns" data-ng-switch="correct">
+            <div data-ng-switch-when="unknown">
+              <img class="question-image" data-ng-src="{{ image.p }}" />
+              <div class="button" data-ng-click="select('porn')">PORN</div>
+            </div>
+            <div data-ng-switch-default>
+               <div data-ng-switch="current.answer">
+                 <div data-ng-switch-when="porn">
+                  <div class="question-year" data-ng-bind="current.year"></div>
+                  <div class="question-cast">
+                    <div class="row">
+                      <div class="small-6 columns">
+                        <div data-ng-repeat="member in current.cast" data-ng-if="$even" data-ng-bind="member"></div>
+                      </div>
+                      <div class="small-6 columns">
+                        <div data-ng-repeat="member in current.cast" data-ng-if="$odd" data-ng-bind="member"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a data-ng-href="/#/{{ next.slug }}" class="button">NEXT &gt;</a>
+                </div>
+                <div data-ng-switch-default>
+                  <img class="question-image" data-ng-src="{{ image.p }}" />
+                  <div class="button disabled">PORN</div>
+                </div>
+              </div>           
+            </div>
+          </div>
+        </div>
+        <div class="question-circle">
+          <div data-ng-switch="correct">
+            <div data-ng-switch-when="yes">&#10004;</div>
+            <div data-ng-switch-when="no">&#10008;</div>
+            <div data-ng-switch-default>?</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div data-ng-switch-default>
+    <div data-ng-switch-default class="fade">
       <div data-ap-loading></div>
     </div>
   </div>

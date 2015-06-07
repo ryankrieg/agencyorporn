@@ -1,9 +1,9 @@
 <div id="start" data-ng-controller="StartCtrl">
   <div data-ng-switch="state">
-    <div data-ng-switch-when="loaded">
+    <div data-ng-switch-when="loaded" class="fade">
       <a data-ng-href="/#/{{ current.slug }}" class="button">START</a>
     </div>
-    <div data-ng-switch-default>
+    <div data-ng-switch-default class="fade">
       <div data-ap-loading></div>
     </div>
   </div>
