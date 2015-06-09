@@ -1,10 +1,20 @@
 <div id="question" data-ng-controller="QuestionCtrl">
   <div data-ng-switch="state">
-    <div data-ng-switch-when="loaded" class="fade">
-      <div class="question-title">'<span data-ng-bind="current.title"></span>'</div>
+    <div data-ng-switch-when="loaded" class="fade container">
+      <!-- TITLE -->
+      <h2>&lsquo;<span data-ng-bind="current.title"></span>&rsquo;</h2>
+      <!-- QUESTION CIRCLE -->
+      <div class="question-circle">
+        <div data-ng-switch="correct">
+          <div data-ng-switch-when="yes">&#10004;</div>
+          <div data-ng-switch-when="no">&#10008;</div>
+          <div data-ng-switch-default>?</div>
+        </div>
+      </div>
       <div class="question-wrapper">
         <div class="row">
-          <div class="question-agency large-6 columns" data-ng-switch="correct">
+          <!-- AGENCY -->
+          <div class="question-half question-agency large-6 columns" data-ng-switch="correct">
             <div data-ng-switch-when="unknown">
               <img class="question-image" data-ng-src="{{ image.a }}" />
               <div class="button" data-ng-click="select('agency')">AGENCY</div>
@@ -23,7 +33,8 @@
               </div>
             </div>
           </div>
-          <div class="question-porn large-6 columns" data-ng-switch="correct">
+          <!-- PORN -->
+          <div class="question-half question-porn large-6 columns" data-ng-switch="correct">
             <div data-ng-switch-when="unknown">
               <img class="question-image" data-ng-src="{{ image.p }}" />
               <div class="button" data-ng-click="select('porn')">PORN</div>
@@ -48,17 +59,15 @@
                   <img class="question-image" data-ng-src="{{ image.p }}" />
                   <div class="button disabled">PORN</div>
                 </div>
-              </div>           
+              </div>
             </div>
           </div>
         </div>
-        <div class="question-circle">
-          <div data-ng-switch="correct">
-            <div data-ng-switch-when="yes">&#10004;</div>
-            <div data-ng-switch-when="no">&#10008;</div>
-            <div data-ng-switch-default>?</div>
-          </div>
-        </div>
+
+      </div>
+      <!-- FOOTER -->
+      <div class="fixed-footer">
+        <h3>Straight from the minds at 88 Creative</h3>
       </div>
     </div>
     <div data-ng-switch-default class="fade">

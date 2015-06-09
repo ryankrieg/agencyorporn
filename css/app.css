@@ -4,12 +4,77 @@ html{
 }
 
 body{
-  background: #EF6694;
+  background-color: rgba(239,102,148,1);
+}
+
+h1,h2,h3,h4,h5{
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Helvetica Neue, Helvetica, arial, sans-serif;
+  font-weight: normal;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+}
+
+h1{
+  display: none;
+}
+
+/* Home copy */
+h2{
+  color: rgba(239,102,148,1);
+  font-size: 24px;
+  line-height: 60px;
+  text-align: center;
+}
+
+/* Footer copy */
+h3{
+  color: #58595B;
+  font-size: 10px;
+  font-style: italic;
+  letter-spacing: 3px;
+  line-height: 48px;
+  text-align: center;
+}
+
+h4{
+
+}
+
+h5{
+
+}
+
+button, .button, button:visited, .button:visited, button.disabled, .button.disabled{
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  height: 28px;
+  background-color: rgba(255,255,255,0);
+  border: 1px solid white;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 26px;
+  opacity: 1;
+}
+
+button:hover, .button:hover, button:active, .button:active{
+  background-color: rgba(255,255,255,0.2);
+}
+
+button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.disabled:active{
+  background-color: rgba(255,255,255,0);
 }
 
 .agency-or-porn-logo{
   position: absolute;
-  top: 0;
+  top: -120px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -21,7 +86,16 @@ body{
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 100px 100px;
+}
 
+.fixed-footer{
+  z-index: 2;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 48px;
+  background: white;
 }
 
 /* LOADING PAGE */
@@ -33,47 +107,101 @@ body{
 #start{
 
 }
+#start .container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/legs-vertical.jpg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 768px 1024px;
+  background-size: contain;
+}
+/* Title */
+#start h2{
+  margin-top: 75%;
+  padding: 0 20px;
+  color: white;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#start button, #start .button{
+  width: 100px;
+  margin-top: 20px;
+}
 
 /* QUESTION PAGE */
 #question{
 
 }
-.question-title {
-  color: white;
-  font-size: 40px;
-  margin: 0 0 30px 0;
-  text-align: center;
+#question .container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#question .container .row{
+  height: 100%;
+}
+#question h2 {
+  z-index: 2;
+  position: relative;
+  background-color: white;
 }
 .question-wrapper {
-  position: relative;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
   text-align: center;
-}
-.question-wrapper a, .question-wrapper a:visited {
- color: white;
 }
 .question-circle {
-  background-image: url('../img/agency-or-porn-logo.png');
+  z-index: 3;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  background-image: url('../img/agency-or-porn-logo-pink.png');
   background-position: 0 0;
   background-repeat: no-repeat;
-  background-size: 100px 100px;
-  bottom: 0;
-  color: white;
-  font-size: 26px;
-  left: 0;
-  height: 100px;
-  margin: auto;
-  padding-top: 32px;
-  position: absolute;
-  right: 0;
+  background-size: 30px 30px;
+  color: rgba(239,102,148,1);
+  font-size: 13px;
   text-align: center;
-  top: 0;
+  line-height: 30px;
+}
+.question-half{
+  padding: 70px 0 30px 0;
+}
+.question-half button, .question-half .button{
   width: 100px;
+}
+.question-agency{
+  background-color: #F2F2F3;
+}
+.question-agency button, .question-agency .button{
+  color: rgba(239,102,148,1);
+  border: 1px solid rgba(239,102,148,1);
+}
+.question-agency button:hover, .question-agency .button:hover, .question-agency button:active, .question-agency .button:active{
+  background-color: rgba(239,102,148,0.05);
+}
+.question-agency button.disabled:hover, .question-agency .button.disabled:hover, .question-agency button.disabled:active, .question-agency .button.disabled:active{
+  color: rgba(239,102,148,1);
+  background-color: rgba(239,102,148,0);
+}
+.question-porn{
+  padding: 10px 0 30px 0;
 }
 .question-image {
   display: block;
-  height: 400px;
+  width: 120px;
+  height: 120px;
   margin: auto;
-  width: 400px;
 }
 
 /* Angular Animate */
@@ -91,4 +219,78 @@ body{
 }
 .fade.ng-leave.ng-leave-active {
   opacity:0;
+}
+
+/* Background Max */
+@media only screen and (min-width: 528px) {
+  #start .container{
+    background-size: 528px 825px;
+  }
+}
+
+/* Horizontal Layout = Larger than Portrait iPad */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Desktop = Larger than Landscape iPad */
+@media only screen and (min-width: 1024px) {
+  .agency-or-porn-logo{
+    position: absolute;
+    top: 150px;
+    bottom: auto;
+  }
+  #start .container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/legs-horizontal.jpg');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 940px 590px;
+    /*background-size: contain;*/
+  }
+  /* Title */
+  #start h2{
+    margin-top: 275px;
+    padding: 0 20px;
+    color: white;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .question-wrapper{
+    height: 100%;
+  }
+  .question-circle {
+    z-index: 3;
+    position: absolute;
+    top: -120px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-image: url('../img/agency-or-porn-logo-white.png');
+    background-size: 100px 100px;
+    color: rgba(239,102,148,1);
+    font-size: 26px;
+    line-height: 100px;
+  }
+  .question-half, .question-porn{
+    height: 100%;
+    padding: 70px 0 30px 0;
+  }
+  .question-image {
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
+}
+
+/* Large Desktop = Wider than 1440px */
+@media only screen and (min-width: 1440px) {
+
 }
