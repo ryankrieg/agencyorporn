@@ -5,11 +5,11 @@
 
     app.config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/', {
-            templateUrl: '/templates/start-ctrl.html'
+            templateUrl: 'templates/start-ctrl.html'
         }).when('/loading', {
-            templateUrl: '/templates/loading-ctrl.html'
+            templateUrl: 'templates/loading-ctrl.html'
         }).when('/:slug', {
-            templateUrl: '/templates/question-ctrl.html'
+            templateUrl: 'templates/question-ctrl.html'
         }).otherwise({
             redirectTo: '/'
         });
@@ -56,7 +56,7 @@
 
     app.directive('apLoading', function() {
         return {
-            templateUrl: '/templates/loading.html'
+            templateUrl: 'templates/loading.html'
         };
     });
 
@@ -74,7 +74,7 @@
                     deferred.resolve('loaded');
                 } else {
                     console.log('Loading JSON');
-                    $http.get('/data/aorp.json').success(function(questions) {
+                    $http.get('data/aorp.json').success(function(questions) {
                         _loaded = true;
                         _questions = _.shuffle(questions);
                         if (slug) {
@@ -127,8 +127,8 @@
             },
             getCurrent: function() {
                 return {
-                    a: '/img/a-' + _as[_index] + '.jpg',
-                    p: '/img/p-' + _ps[_index] + '.jpg'
+                    a: 'img/a-' + _as[_index] + '.jpg',
+                    p: 'img/p-' + _ps[_index] + '.jpg'
                 };
             }
         };
