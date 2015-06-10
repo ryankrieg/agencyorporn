@@ -24,7 +24,7 @@
                 <div data-ng-switch-when="agency">
                   <a class="question-url" data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
                   <div class="question-description" data-ng-bind="current.description"></div>
-                  <a data-ng-href="/#/{{ next.slug }}" class="button">NEXT &gt;</a>
+                  <a data-ng-href="#/{{ next.slug }}" class="button">NEXT &gt;</a>
                 </div>
                 <div data-ng-switch-default>
                   <img class="question-image" data-ng-src="{{ image.a }}" />
@@ -53,7 +53,7 @@
                       </div>
                     </div>
                   </div>
-                  <a data-ng-href="/#/{{ next.slug }}" class="button">NEXT &gt;</a>
+                  <a data-ng-href="#/{{ next.slug }}" class="button">NEXT &gt;</a>
                 </div>
                 <div data-ng-switch-default>
                   <img class="question-image" data-ng-src="{{ image.p }}" />
