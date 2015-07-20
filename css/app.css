@@ -32,16 +32,6 @@ h2{
   text-align: center;
 }
 
-/* Footer copy */
-h3{
-  color: #58595B;
-  font-size: 10px;
-  font-style: italic;
-  letter-spacing: 3px;
-  line-height: 48px;
-  text-align: center;
-}
-
 h4{
 
 }
@@ -52,15 +42,16 @@ h5{
 
 button, .button, button:visited, .button:visited, button.disabled, .button.disabled{
   display: block;
+  width: 160px;
+  height: 40px;
   margin: 0 auto;
   padding: 0;
-  height: 28px;
   background-color: rgba(255,255,255,0);
   border: 1px solid white;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
   letter-spacing: 2px;
-  line-height: 26px;
+  line-height: 38px;
   opacity: 1;
 }
 
@@ -73,19 +64,31 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
 }
 
 .agency-or-porn-logo{
-  position: absolute;
-  top: -120px;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  position: relative;
+  top: 100px;
   display: block;
   width: 100px;
   height: 100px;
-  margin: auto;
+  margin: 0 auto 0 auto;
   background-image: url('../img/agency-or-porn-logo.png');
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 100px 100px;
+  opacity: 1;
+}
+#loading .agency-or-porn-logo{
+  -webkit-animation: logo-fade-in 0.5s ease-in 0s 1 normal;
+  animation: logo-fade-in 0.5s ease-in 0s 1 normal;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes logo-fade-in {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+/* Standard syntax */
+@keyframesopacity: 0; logo-fade-in {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 .fixed-footer{
@@ -95,7 +98,18 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
   bottom: 0;
   left: 0;
   height: 48px;
+  padding: 10px;
   background: white;
+}
+
+/* Footer copy */
+h3{
+  color: #58595B;
+  font-size: 9px;
+  font-style: italic;
+  letter-spacing: 2px;
+  line-height: 30px;
+  text-align: left;
 }
 
 /* LOADING PAGE */
@@ -105,7 +119,7 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
 
 /* START PAGE */
 #start{
-
+  height: 100%;
 }
 #start .container{
   position: absolute;
@@ -119,18 +133,14 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
 }
 /* Title */
 #start h2{
-  margin-top: 75%;
+  margin: 120px 0 20px 0;
   padding: 0 20px;
   color: white;
-  font-size: 12px;
+  font-size: 16px;
   font-style: italic;
-  line-height: 18px;
+  line-height: 26px;
   letter-spacing: 1px;
   text-align: center;
-}
-#start button, #start .button{
-  width: 100px;
-  margin-top: 20px;
 }
 
 /* QUESTION PAGE */
@@ -160,15 +170,15 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
 .question-circle {
   z-index: 3;
   position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 30px;
-  height: 30px;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
   margin: auto;
   background-image: url('../img/agency-or-porn-logo-pink.png');
   background-position: 0 0;
   background-repeat: no-repeat;
-  background-size: 30px 30px;
+  background-size: 40px 40px;
   color: rgba(239,102,148,1);
   font-size: 13px;
   text-align: center;
@@ -206,19 +216,19 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
 
 /* Angular Animate */
 .fade.ng-animate {
-  transition:0.5s linear all;
+  transition: 1s ease-in all;
 }
 .fade.ng-enter {
-  opacity:0;
+  opacity: 0;
 }
 .fade.ng-enter.ng-enter-active {
-  opacity:1;
+  opacity: 1;
 }
 .fade.ng-leave {
-  opacity:1;
+  opacity: 1;
 }
 .fade.ng-leave.ng-leave-active {
-  opacity:0;
+  opacity: 0;
 }
 
 /* Background Max */
@@ -238,7 +248,11 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
   .agency-or-porn-logo{
     position: absolute;
     top: 150px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     bottom: auto;
+    margin: auto;
   }
   #start .container{
     position: absolute;
