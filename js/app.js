@@ -70,15 +70,12 @@
                 var deferred = $q.defer();
 
                 if (_loaded) {
-                    console.log('Already loaded');
                     deferred.resolve('loaded');
                 } else {
-                    console.log('Loading JSON');
                     $http.get('data/aorp.json').success(function(questions) {
                         _loaded = true;
                         _questions = _.shuffle(questions);
                         if (slug) {
-                            console.log('Setting index from slug');
                             _index = _.findIndex(_questions, { slug: slug }) || 0;
                         }
                         $timeout(function() {
@@ -93,17 +90,14 @@
                 return deferred.promise;
             },
             increment: function() {
-                console.log('Incrementing index');
                 _index++;
 
                 if (_index >= _questions.length) _index = 0;
             },
             getCurrent: function() {
-                console.log('Returning current');
                 return _questions[_index];
             },
             getNext: function() {
-                console.log('Returning next');
                 var index = _index + 1;
 
                 if (index >= _questions.length) index = 0;
@@ -115,7 +109,7 @@
 
     app.factory('Image', [function() {
         var _index = 0;
-        var _length = 2;
+        var _length = 5;
         var _as = _.shuffle(_.range(_length));
         var _ps = _.shuffle(_.range(_length));
 
