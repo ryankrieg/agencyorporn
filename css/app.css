@@ -28,6 +28,7 @@ h1{
 h2{
   color: rgba(239,102,148,1);
   font-size: 24px;
+  font-style: italic;
   line-height: 60px;
   text-align: center;
 }
@@ -137,7 +138,7 @@ h3{
   padding: 0 20px;
   color: white;
   font-size: 16px;
-  font-style: italic;
+  font-style: normal;
   line-height: 26px;
   letter-spacing: 1px;
   text-align: center;
@@ -160,11 +161,15 @@ h3{
   position: relative;
   background-color: white;
 }
+#question h2 span{
+  margin: 0 2px;
+}
 .question-wrapper {
   z-index: 1;
   position: absolute;
   top: 0;
   width: 100%;
+  height: 100%;
   text-align: center;
 }
 .question-circle {
@@ -184,14 +189,31 @@ h3{
   text-align: center;
   line-height: 30px;
 }
+.question-circle img{
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
 .question-half{
-  padding: 70px 0 30px 0;
+  height: 50%;
+  padding: 0;
+}
+.question-half div:first-child{
+  position: absolute;
+  width: 100%;
+  height: 165px;
+  margin: auto;
+  vertical-align: middle;
 }
 .question-half button, .question-half .button{
   width: 100px;
 }
 .question-agency{
   background-color: #F2F2F3;
+}
+.question-agency div:first-child{
+  top: 60px;
+  bottom: 0;
 }
 .question-agency button, .question-agency .button{
   color: rgba(239,102,148,1);
@@ -205,13 +227,17 @@ h3{
   background-color: rgba(239,102,148,0);
 }
 .question-porn{
-  padding: 10px 0 30px 0;
+
+}
+.question-porn div:first-child{
+  top: 0;
+  bottom: 48px;
 }
 .question-image {
   display: block;
   width: 120px;
   height: 120px;
-  margin: auto;
+  margin: 0 auto 5px auto;
 }
 
 /* Angular Animate */
