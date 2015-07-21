@@ -258,6 +258,23 @@ h3{
   opacity: 0;
 }
 
+/* Angular Animate */
+.flip.ng-animate {
+  transition: top 1s ease-in;
+}
+.flip.ng-enter {
+  top: 0;
+}
+.flip.ng-enter.ng-enter-active {
+  top: 1;
+}
+.flip.ng-leave {
+  top: 1;
+}
+.flip.ng-leave.ng-leave-active {
+  top: 0;
+}
+
 /* Background Max */
 @media only screen and (min-width: 528px) {
   #start .container{
