@@ -1,5 +1,5 @@
 <div id="question" data-ng-controller="QuestionCtrl">
-  <div data-ng-switch="state">
+  <div data-ng-switch="state" data-ng-animate-children>
     <div data-ng-switch-when="loaded" class="fade container">
       <!-- TITLE -->
       <h2>&lsquo;<span data-ng-bind="current.title"></span>&rsquo;</h2>
@@ -14,14 +14,14 @@
       <div class="question-wrapper">
         <div class="row">
           <!-- AGENCY -->
-          <div class="question-half question-agency large-6 columns" data-ng-switch="correct">
+          <div class="question-half question-agency large-6 columns" data-ng-switch="correct" data-ng-animate-children>
             <div data-ng-switch-when="unknown">
               <img class="question-image" data-ng-src="{{ image.a }}" />
               <div class="button" data-ng-click="select('agency')">AGENCY</div>
             </div>
             <div data-ng-switch-default>
               <div data-ng-switch="current.answer">
-                <div data-ng-switch-when="agency">
+                <div data-ng-switch-when="agency" class="fade">
                   <a class="question-url" data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
                   <div class="question-description" data-ng-bind="current.description"></div>
                   <a data-ng-href="#/{{ next.slug }}" class="button">NEXT &gt;</a>
@@ -34,14 +34,14 @@
             </div>
           </div>
           <!-- PORN -->
-          <div class="question-half question-porn large-6 columns" data-ng-switch="correct">
+          <div class="question-half question-porn large-6 columns" data-ng-switch="correct" data-ng-animate-children>
             <div data-ng-switch-when="unknown">
               <img class="question-image" data-ng-src="{{ image.p }}" />
               <div class="button" data-ng-click="select('porn')">PORN</div>
             </div>
             <div data-ng-switch-default>
                <div data-ng-switch="current.answer">
-                 <div data-ng-switch-when="porn">
+                 <div data-ng-switch-when="porn" class="fade">
                   <div class="question-year" data-ng-bind="current.year"></div>
                   <div class="question-cast">
                     <div class="row">
