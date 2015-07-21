@@ -243,7 +243,7 @@ h3{
 
 /* Angular Animate */
 .fade.ng-animate {
-  transition: 1s ease-in all;
+  transition: opacity 1s ease-in;
 }
 .fade.ng-enter {
   opacity: 0;
