@@ -21,9 +21,18 @@
             </div>
             <div data-ng-switch-default class="vert-centered">
               <div data-ng-switch="current.answer">
-                <div data-ng-switch-when="agency" class="fade">
-                  <a class="question-url" data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
-                  <div class="question-description" data-ng-bind="current.description"></div>
+                <div data-ng-switch-when="porn" class="fade">
+                  <div class="question-year" data-ng-bind="current.year"></div>
+                  <div class="question-cast">
+                    <div class="row">
+                      <div class="small-6 columns">
+                        <div data-ng-repeat="member in current.cast" data-ng-if="$even" data-ng-bind="member"></div>
+                      </div>
+                      <div class="small-6 columns">
+                        <div data-ng-repeat="member in current.cast" data-ng-if="$odd" data-ng-bind="member"></div>
+                      </div>
+                    </div>
+                  </div>
                   <a data-ng-href="#/{{ next.slug }}" class="button">NEXT &gt;</a>
                 </div>
                 <div data-ng-switch-default>
@@ -40,19 +49,10 @@
               <div class="button" data-ng-click="select('porn')">PORN</div>
             </div>
             <div data-ng-switch-default class="vert-centered">
-               <div data-ng-switch="current.answer">
-                 <div data-ng-switch-when="porn" class="fade">
-                  <div class="question-year" data-ng-bind="current.year"></div>
-                  <div class="question-cast">
-                    <div class="row">
-                      <div class="small-6 columns">
-                        <div data-ng-repeat="member in current.cast" data-ng-if="$even" data-ng-bind="member"></div>
-                      </div>
-                      <div class="small-6 columns">
-                        <div data-ng-repeat="member in current.cast" data-ng-if="$odd" data-ng-bind="member"></div>
-                      </div>
-                    </div>
-                  </div>
+              <div data-ng-switch="current.answer">
+                <div data-ng-switch-when="agency" class="fade">
+                  <a class="question-url" data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
+                  <div class="question-description" data-ng-bind="current.description"></div>
                   <a data-ng-href="#/{{ next.slug }}" class="button">NEXT &gt;</a>
                 </div>
                 <div data-ng-switch-default>
