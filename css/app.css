@@ -204,6 +204,7 @@ h3{
   height: 165px;
   margin: auto;
   vertical-align: middle;
+  overflow: hidden;
 }
 .question-half button, .question-half .button{
   width: 100px;
