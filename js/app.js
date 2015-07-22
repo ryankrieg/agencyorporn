@@ -45,6 +45,10 @@
             $scope.current = Question.getCurrent();
             $scope.next = Question.getNext();
             Question.increment();
+
+            if (state === 'loaded') {
+                angular.element('#footer').addClass('show');
+            }
         }, function(state) {
             $scope.state = state;
         });
@@ -56,7 +60,7 @@
 
     app.directive('apLoading', function() {
         return {
-            templateUrl: 'templates/loading.html'
+            templateUrl: 'templates/ap-loading.html'
         };
     });
 

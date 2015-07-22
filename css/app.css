@@ -94,6 +94,7 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
 }
 
 .fixed-footer{
+  opacity: 0;
   z-index: 2;
   position: fixed;
   right: 0;
@@ -102,6 +103,10 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
   height: 48px;
   padding: 10px;
   background: white;
+  transition: opacity 1s ease-in-out;
+}
+.fixed-footer.show {
+  opacity: 1;
 }
 /* Footer copy */
 h3{
