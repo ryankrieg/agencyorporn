@@ -52,11 +52,13 @@ button, .button, button:visited, .button:visited, button.disabled, .button.disab
   margin: 0 auto;
   padding: 0;
   background-color: rgba(255,255,255,0);
+  -webkit-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
   opacity: 1;
 }
 
 button:hover, .button:hover, button:active, .button:active{
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.15);
 }
 
 button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.disabled:active{
@@ -101,15 +103,24 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
   padding: 10px;
   background: white;
 }
-
 /* Footer copy */
 h3{
+  float: left;
+  display: inline-block;
   color: #58595B;
   font-size: 9px;
   font-style: italic;
   letter-spacing: 2px;
   line-height: 30px;
   text-align: left;
+}
+.twitter-share{
+  float: left;
+  display: inline-block;
+}
+.facebook-share{
+  float: left;
+  display: inline-block;
 }
 
 /* LOADING PAGE */
@@ -133,7 +144,7 @@ h3{
 }
 /* Title */
 #start h2{
-  margin: 120px 0 20px 0;
+  margin: 120px auto 20px auto;
   padding: 0 20px;
   color: white;
   font-size: 16px;
@@ -183,10 +194,6 @@ h3{
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 40px 40px;
-  color: rgba(239,102,148,1);
-  font-size: 13px;
-  text-align: center;
-  line-height: 30px;
 }
 .question-circle img{
   width: 20px;
@@ -234,7 +241,7 @@ h3{
   bottom: 48px;
 }
 .question-year{
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   color: #EF6694;
   font-size: 14px;
   font-weight: 300;
@@ -243,8 +250,8 @@ h3{
   line-height: 20px;
 }
 .question-cast{
-  margin-bottom: 10px;
   font-size: 14px;
+  line-height: 20px;
 }
 .question-cast .row{
   max-width: 350px;
@@ -261,9 +268,6 @@ h3{
   font-style: italic;
   letter-spacing: 1px;
   line-height: 20px;
-}
-.question-url a:hover, .question-url a:active{
-  text-decoration: underline;
 }
 .question-description{
   padding-right: 10px;
@@ -291,7 +295,7 @@ h3{
 
 /* Angular Animate SLOW FADE*/
 .fade-slow.ng-animate {
-  transition: opacity 3s ease-in-out;
+  transition: opacity 2s ease-out;
 }
 .fade-slow.ng-enter {
   opacity: 0;
@@ -330,32 +334,43 @@ h3{
     margin: auto;
   }
   #start .container{
-    position: absolute;
-    width: 100%;
-    height: 100%;
     background-image: url('../img/legs-horizontal.jpg');
     background-position: right bottom;
-    background-repeat: no-repeat;
     background-size: 940px 590px;
     /*background-size: contain;*/
   }
   /* Title */
   #start h2{
+    max-width: 320px;
     margin-top: 275px;
-    padding: 0 20px;
-    color: white;
-    font-size: 14px;
-    line-height: 22px;
-    letter-spacing: 1px;
+    padding: 0;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  /* Footer copy */
+  h3{
+    float: none;
+    display: block;
+    font-size: 10px;
     text-align: center;
+    letter-spacing: 3px;
+  }
+  #question h2 {
+  font-size: 48px;
+  line-height: 120px;
+  }
+  #question h2 span{
+    margin: 0 4px;
   }
   .question-wrapper{
     height: 100%;
+    background-image: url('../img/question-bg.png');
+    background-position: top center;
+    background-repeat: repeat-y;
+    background-size: 2560px 1px;
   }
   .question-circle {
-    z-index: 3;
-    position: absolute;
-    top: -120px;
+    top: 70px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -363,19 +378,65 @@ h3{
     height: 100px;
     background-image: url('../img/agency-or-porn-logo-white.png');
     background-size: 100px 100px;
-    color: rgba(239,102,148,1);
-    font-size: 26px;
-    line-height: 100px;
   }
-  .question-half, .question-porn{
+  .question-circle img{
+    width: 40px;
+    height: 40px;
+    margin: 30px;
+  }
+  .question-half{
     height: 100%;
-    padding: 70px 0 30px 0;
+  }
+  .question-agency button:hover, .question-agency .button:hover, .question-agency button:active, .question-agency .button:active{
+    background-color: rgba(239,102,148,0.08);
+  }
+  .question-agency button.disabled:hover, .question-agency .button.disabled:hover, .question-agency button.disabled:active, .question-agency .button.disabled:active{
+    background-color: rgba(255,255,255,0);
+  }
+  .question-half .vert-centered{
+    top: 120px;
+    bottom: 58px;
+    height: 360px;
   }
   .question-image {
     display: block;
     width: 300px;
     height: 300px;
     margin: auto;
+  }
+  .question-year{
+    margin-top: 100px;
+    margin-bottom: 10px;
+    line-height: 24px;
+  }
+  .question-cast{
+    line-height: 24px;
+  }
+  .question-url{
+    margin-top: 100px;
+    margin-bottom: 10px;
+  }
+  .question-url a, .question-url a:visited{
+    line-height: 24px;
+  }
+  .question-url a:hover, .question-url a:active{
+    text-decoration: underline;
+  }
+  .question-description{
+    max-width: 350px;
+    margin: 0 auto;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  button.next, .button.next{
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
+  }
+  button.next:hover, .button.next:hover, button.next:active, .button.next:active{
+    opacity: 0.8;
   }
 }
 

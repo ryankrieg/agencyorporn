@@ -38,7 +38,7 @@
                       </div>
                     </div>
                   </div>
-                  <a data-ng-href="#/{{ next.slug }}" class="button"><img src="../img/button-next-pink.png"/></a>
+                  <a data-ng-href="#/{{ next.slug }}" class="button next"><img src="../img/button-next-pink.png"/></a>
                 </div>
                 <div data-ng-switch-default>
                   <img class="question-image" data-ng-src="{{ image.a }}" />
@@ -60,7 +60,7 @@
                     <a data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
                   </div>
                   <div class="question-description" data-ng-bind="current.description"></div>
-                  <a data-ng-href="#/{{ next.slug }}" class="button"><img src="../img/button-next-white.png"/></a>
+                  <a data-ng-href="#/{{ next.slug }}" class="button next"><img src="../img/button-next-white.png"/></a>
                 </div>
                 <div data-ng-switch-default>
                   <img class="question-image" data-ng-src="{{ image.p }}" />
@@ -75,6 +75,13 @@
       <!-- FOOTER -->
       <div class="fixed-footer">
         <h3>Straight from the minds at 88 Creative</h3>
+        <!-- TWITTER SHARE BUTTON -->
+        <div class="twitter-share">
+
+        </div>
+        <div class="facebook-share">
+
+        </div>
       </div>
     </div>
     <div data-ng-switch-default class="fade">
