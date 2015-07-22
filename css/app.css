@@ -5,9 +5,13 @@ html{
 
 body{
   background-color: rgba(239,102,148,1);
+  color: #231f20;
+  font-family: 'Open Sans', Helvetica Neue, Helvetica, arial, sans-serif;
+  font-weight: normal;
+  font-weight: 300;
 }
 
-h1,h2,h3,h4,h5{
+h1,h2,h3,h4,h5,p,a{
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', Helvetica Neue, Helvetica, arial, sans-serif;
@@ -43,16 +47,11 @@ h5{
 
 button, .button, button:visited, .button:visited, button.disabled, .button.disabled{
   display: block;
-  width: 160px;
-  height: 40px;
+  width: 126px;
+  height: 36px;
   margin: 0 auto;
   padding: 0;
   background-color: rgba(255,255,255,0);
-  border: 1px solid white;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  line-height: 38px;
   opacity: 1;
 }
 
@@ -176,7 +175,7 @@ h3{
   z-index: 3;
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 5px;
   width: 40px;
   height: 40px;
   margin: auto;
@@ -207,7 +206,18 @@ h3{
   overflow: hidden;
 }
 .question-half button, .question-half .button{
-  width: 100px;
+  position: absolute;
+  top: auto;
+  right: 0;
+  left: 0;
+  bottom: 0px;
+  margin: auto;
+}
+.question-image {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 5px auto;
 }
 .question-agency{
   background-color: #F2F2F3;
@@ -216,34 +226,55 @@ h3{
   top: 60px;
   bottom: 0;
 }
-.question-agency button, .question-agency .button{
-  color: rgba(239,102,148,1);
-  border: 1px solid rgba(239,102,148,1);
-}
-.question-agency button:hover, .question-agency .button:hover, .question-agency button:active, .question-agency .button:active{
-  background-color: rgba(239,102,148,0.05);
-}
-.question-agency button.disabled:hover, .question-agency .button.disabled:hover, .question-agency button.disabled:active, .question-agency .button.disabled:active{
-  color: rgba(239,102,148,1);
-  background-color: rgba(239,102,148,0);
-}
 .question-porn{
-
+  background-color: rgba(239,102,148,1);
 }
 .question-porn .vert-centered{
   top: 0;
   bottom: 48px;
 }
-.question-image {
+.question-year{
+  margin-bottom: 5px;
+  color: #EF6694;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+.question-cast{
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.question-cast .row{
+  max-width: 350px;
+  margin: 0 auto;
+}
+.question-url{
+  margin-bottom: 10px;
+}
+.question-url a, .question-url a:visited{
   display: block;
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 5px auto;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+.question-url a:hover, .question-url a:active{
+  text-decoration: underline;
+}
+.question-description{
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 13px;
+  line-height: 20px;
 }
 
-/* Angular Animate */
+/* Angular Animate FADE*/
 .fade.ng-animate {
-  transition: opacity 1s ease-in;
+  transition: opacity 1s ease-in-out;
 }
 .fade.ng-enter {
   opacity: 0;
@@ -258,21 +289,21 @@ h3{
   opacity: 0;
 }
 
-/* Angular Animate */
-.flip.ng-animate {
-  transition: top 1s ease-in;
+/* Angular Animate SLOW FADE*/
+.fade-slow.ng-animate {
+  transition: opacity 3s ease-in-out;
 }
-.flip.ng-enter {
-  top: 0;
+.fade-slow.ng-enter {
+  opacity: 0;
 }
-.flip.ng-enter.ng-enter-active {
-  top: 1;
+.fade-slow.ng-enter.ng-enter-active {
+  opacity: 1;
 }
-.flip.ng-leave {
-  top: 1;
+.fade-slow.ng-leave {
+  opacity: 1;
 }
-.flip.ng-leave.ng-leave-active {
-  top: 0;
+.fade-slow.ng-leave.ng-leave-active {
+  opacity: 0;
 }
 
 /* Background Max */

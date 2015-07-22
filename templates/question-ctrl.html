@@ -4,25 +4,30 @@
       <!-- TITLE -->
       <h2>&lsquo;<span data-ng-bind="current.title"></span>&rsquo;</h2>
       <!-- QUESTION CIRCLE -->
-      <div class="question-circle">
-        <div data-ng-switch="correct">
-          <div data-ng-switch-when="yes" class="fade"><img src="../img/icon-check.png"/></div>
-          <div data-ng-switch-when="no" class="fade"><img src="../img/icon-cross.png"/></div>
-          <div data-ng-switch-default><img src="../img/icon-qmark.png"/></div>
+      <a data-ng-href="#/">
+        <div class="question-circle">
+          <div data-ng-switch="correct">
+            <div data-ng-switch-when="yes" class="fade"><img src="../img/icon-check.png"/></div>
+            <div data-ng-switch-when="no" class="fade"><img src="../img/icon-cross.png"/></div>
+            <div data-ng-switch-default><img src="../img/icon-qmark.png"/></div>
+          </div>
         </div>
-      </div>
+      </a>
       <div class="question-wrapper">
         <div class="row">
           <!-- AGENCY -->
           <div class="question-half question-agency large-6 columns" data-ng-switch="correct" data-ng-animate-children>
             <div data-ng-switch-when="unknown" class="vert-centered">
               <img class="question-image" data-ng-src="{{ image.a }}" />
-              <div class="button" data-ng-click="select('agency')">AGENCY</div>
+              <div class="button" data-ng-click="select('agency')"><img src="../img/button-agency.png"/></div>
             </div>
             <div data-ng-switch-default class="vert-centered">
               <div data-ng-switch="current.answer">
-                <div data-ng-switch-when="porn" class="fade">
-                  <div class="question-year" data-ng-bind="current.year"></div>
+                <div data-ng-switch-when="porn" class="fade-slow">
+                  <div class="question-year">
+                    <span data-ng-bind="current.year"></span>
+                    <span> / Starring</span>
+                  </div>
                   <div class="question-cast">
                     <div class="row">
                       <div class="small-6 columns">
@@ -33,11 +38,11 @@
                       </div>
                     </div>
                   </div>
-                  <a data-ng-href="#/{{ next.slug }}" class="button">NEXT &gt;</a>
+                  <a data-ng-href="#/{{ next.slug }}" class="button"><img src="../img/button-next-pink.png"/></a>
                 </div>
                 <div data-ng-switch-default>
                   <img class="question-image" data-ng-src="{{ image.a }}" />
-                  <div class="button disabled">AGENCY</div>
+                  <div class="button disabled"><img src="../img/button-agency.png"/></div>
                 </div>
               </div>
             </div>
@@ -46,18 +51,20 @@
           <div class="question-half question-porn large-6 columns" data-ng-switch="correct" data-ng-animate-children>
             <div data-ng-switch-when="unknown" class="vert-centered">
               <img class="question-image" data-ng-src="{{ image.p }}" />
-              <div class="button" data-ng-click="select('porn')">PORN</div>
+              <div class="button" data-ng-click="select('porn')"><img src="../img/button-porn.png"/></div>
             </div>
             <div data-ng-switch-default class="vert-centered">
               <div data-ng-switch="current.answer">
-                <div data-ng-switch-when="agency" class="fade">
-                  <a class="question-url" data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
+                <div data-ng-switch-when="agency" class="fade-slow">
+                  <div class="question-url">
+                    <a data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
+                  </div>
                   <div class="question-description" data-ng-bind="current.description"></div>
-                  <a data-ng-href="#/{{ next.slug }}" class="button">NEXT &gt;</a>
+                  <a data-ng-href="#/{{ next.slug }}" class="button"><img src="../img/button-next-white.png"/></a>
                 </div>
                 <div data-ng-switch-default>
                   <img class="question-image" data-ng-src="{{ image.p }}" />
-                  <div class="button disabled">PORN</div>
+                  <div class="button disabled"><img src="../img/button-porn.png"/></div>
                 </div>
               </div>
             </div>
