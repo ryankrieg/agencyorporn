@@ -70,6 +70,9 @@
                 var deferred = $q.defer();
 
                 if (_loaded) {
+                    if (slug) {
+                        _index = _.findIndex(_questions, { slug: slug }) || _index;
+                    }
                     deferred.resolve('loaded');
                 } else {
                     $http.get('data/aorp.json').success(function(questions) {
