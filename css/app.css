@@ -100,7 +100,7 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
   right: 0;
   bottom: 0;
   left: 0;
-  height: 48px;
+  height: 58px;
   padding: 10px 5px;
   background: white;
   transition: opacity 1s ease-in-out;
@@ -116,8 +116,14 @@ h3{
   font-size: 9px;
   font-style: italic;
   letter-spacing: 1.2px;
-  line-height: 30px;
+  line-height: 40px;
   text-align: left;
+}
+h3 a, h3 a:visited{
+  color: #58595B;
+}
+h3 a:hover, h3 a:active{
+  color: #000;
 }
 
 /* SHARE BUTTONS */
@@ -250,7 +256,7 @@ h3{
 }
 .question-porn .vert-centered{
   top: 0;
-  bottom: 48px;
+  bottom: 58px;
 }
 .question-year{
   margin-bottom: 10px;
@@ -360,6 +366,7 @@ h3{
     line-height: 24px;
   }
   .fixed-footer{
+    height: 48px;
     padding: 10px;
   }
   /* Footer copy */
@@ -368,6 +375,7 @@ h3{
     display: block;
     font-size: 10px;
     text-align: center;
+    line-height: 30px;
     letter-spacing: 3px;
   }
 
@@ -431,7 +439,7 @@ h3{
   }
   .question-half .vert-centered{
     top: 120px;
-    bottom: 58px;
+    bottom: 48px;
     height: 360px;
   }
   .question-image {
@@ -478,5 +486,10 @@ h3{
 
 /* Large Desktop = Wider than 1440px */
 @media only screen and (min-width: 1440px) {
+
+}
+
+/* Desktop = Browser Height smaller than 550px */
+@media only screen and (max-height: 550px) {
 
 }
