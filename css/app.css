@@ -51,7 +51,7 @@ button, .button, button:visited, .button:visited, button.disabled, .button.disab
   height: 36px;
   margin: 0 auto;
   padding: 0;
-  background-color: rgba(255,255,255,0);
+  background-color: transparent;
   -webkit-transition: background-color 0.3s ease-out;
   transition: background-color 0.3s ease-out;
   opacity: 1;
@@ -94,14 +94,14 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
 }
 
 .fixed-footer{
-  opacity: 0;
+  opacity: 1;
   z-index: 2;
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
   height: 48px;
-  padding: 10px;
+  padding: 10px 5px;
   background: white;
   transition: opacity 1s ease-in-out;
 }
@@ -115,22 +115,29 @@ h3{
   color: #58595B;
   font-size: 9px;
   font-style: italic;
-  letter-spacing: 2px;
+  letter-spacing: 1.2px;
   line-height: 30px;
   text-align: left;
 }
-.twitter-share{
+
+/* SHARE BUTTONS */
+.social-buttons{
   float: left;
   display: inline-block;
+  width: 100px;
+  margin: -12px 0 0 10px;
+}
+.social-buttons a{
+  color: rgba(0,0,0,0);
 }
 .facebook-share{
   float: left;
   display: inline-block;
 }
-
-/* LOADING PAGE */
-#loading{
-
+.twitter-share{
+  float: left;
+  display: inline-block;
+  margin: 3px 0 0 0;
 }
 
 /* START PAGE */
@@ -352,6 +359,9 @@ h3{
     font-size: 15px;
     line-height: 24px;
   }
+  .fixed-footer{
+    padding: 10px;
+  }
   /* Footer copy */
   h3{
     float: none;
@@ -360,6 +370,27 @@ h3{
     text-align: center;
     letter-spacing: 3px;
   }
+
+  /* SHARE BUTTONS */
+  .social-buttons{
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: none;
+    display: block;
+    width: 260px;
+    margin: 10px 0 0 0;
+  }
+  .facebook-share{
+    float: left;
+    display: inline-block;
+  }
+  .twitter-share{
+    float: left;
+    display: inline-block;
+    margin: 3px 0 0 10px;
+  }
+
   #question h2 {
   font-size: 48px;
   line-height: 120px;
