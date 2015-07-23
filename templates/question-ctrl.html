@@ -7,9 +7,9 @@
       <a data-ng-href="#/">
         <div class="question-circle">
           <div data-ng-switch="correct">
-            <div data-ng-switch-when="yes" class="fade"><img src="../img/icon-check.png"/></div>
-            <div data-ng-switch-when="no" class="fade"><img src="../img/icon-cross.png"/></div>
-            <div data-ng-switch-default><img src="../img/icon-qmark.png"/></div>
+            <div data-ng-switch-when="yes" class="fade"><img src="img/icon-check.png"/></div>
+            <div data-ng-switch-when="no" class="fade"><img src="img/icon-cross.png"/></div>
+            <div data-ng-switch-default><img src="img/icon-qmark.png"/></div>
           </div>
         </div>
       </a>
@@ -19,7 +19,7 @@
           <div class="question-half question-agency large-6 columns" data-ng-switch="correct" data-ng-animate-children>
             <div data-ng-switch-when="unknown" class="vert-centered">
               <img class="question-image" data-ng-src="{{ image.a }}" />
-              <div class="button" data-ng-click="select('agency')"><img src="../img/button-agency.png"/></div>
+              <div class="button" data-ng-click="select('agency')"><img src="img/button-agency.png"/></div>
             </div>
             <div data-ng-switch-default class="vert-centered">
               <div data-ng-switch="current.answer">
@@ -38,11 +38,11 @@
                       </div>
                     </div>
                   </div>
-                  <a data-ng-href="#/{{ next.slug }}" class="button next"><img src="../img/button-next-pink.png"/></a>
+                  <a data-ng-href="#/{{ next.slug }}" class="button next"><img src="img/button-next-pink.png"/></a>
                 </div>
                 <div data-ng-switch-default>
                   <img class="question-image" data-ng-src="{{ image.a }}" />
-                  <div class="button disabled"><img src="../img/button-agency.png"/></div>
+                  <div class="button disabled"><img src="img/button-agency.png"/></div>
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@
           <div class="question-half question-porn large-6 columns" data-ng-switch="correct" data-ng-animate-children>
             <div data-ng-switch-when="unknown" class="vert-centered">
               <img class="question-image" data-ng-src="{{ image.p }}" />
-              <div class="button" data-ng-click="select('porn')"><img src="../img/button-porn.png"/></div>
+              <div class="button" data-ng-click="select('porn')"><img src="img/button-porn.png"/></div>
             </div>
             <div data-ng-switch-default class="vert-centered">
               <div data-ng-switch="current.answer">
@@ -60,11 +60,11 @@
                     <a data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
                   </div>
                   <div class="question-description" data-ng-bind="current.description"></div>
-                  <a data-ng-href="#/{{ next.slug }}" class="button next"><img src="../img/button-next-white.png"/></a>
+                  <a data-ng-href="#/{{ next.slug }}" class="button next"><img src="img/button-next-white.png"/></a>
                 </div>
                 <div data-ng-switch-default>
                   <img class="question-image" data-ng-src="{{ image.p }}" />
-                  <div class="button disabled"><img src="../img/button-porn.png"/></div>
+                  <div class="button disabled"><img src="img/button-porn.png"/></div>
                 </div>
               </div>
             </div>
