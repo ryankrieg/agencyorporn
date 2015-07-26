@@ -2,7 +2,7 @@
   <div data-ng-switch="state" data-ng-animate-children>
     <div data-ng-switch-when="loaded" class="fade container">
       <!-- TITLE -->
-      <h2>&lsquo;<span data-ng-bind="current.title"></span>&rsquo;</h2>
+      <h2 data-ng-bind="current.title"></h2>
       <!-- QUESTION CIRCLE -->
       <a data-ng-href="#/">
         <div class="question-circle">
@@ -59,7 +59,11 @@
                   <div class="question-url">
                     <a data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
                   </div>
-                  <div class="question-description" data-ng-bind="current.description"></div>
+                  <div class="question-description">
+                    <span>&lsquo;</span>
+                    <span data-ng-bind="current.description"></span>
+                    <span>&rsquo;</span>
+                  </div>
                   <a data-ng-href="#/{{ next.slug }}" class="button next"><img src="img/button-next-white.png"/></a>
                 </div>
                 <div data-ng-switch-default>
