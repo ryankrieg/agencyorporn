@@ -55,12 +55,40 @@
 
         $scope.select = function(selection) {
             $scope.correct = (selection === $scope.current.answer) ? 'yes' : 'no';
+            $scope.$broadcast('play', $scope.correct);
+        };
+    });
+
+    app.directive('apAudio', function() {
+        return {
+            scope: {
+                correct: '@'
+            },
+            link: function(scope, element, attrs) {
+                var audio = angular.element('<audio/>');
+                var source = angular.element('<source/>');
+
+                source.attr('type', 'audio/mpeg');
+                source.attr('src', 'audio/' + scope.correct + '.mp3');
+
+                audio.append(source);
+                element.append(audio);
+
+                scope.$on('play', function(evt, correct) {
+                    if (correct === scope.correct) {
+                        audio[0].play();
+                    }
+                });
+            }
         };
     });
 
     app.directive('apLoading', function() {
         return {
-            templateUrl: 'templates/ap-loading.html'
+            template:
+                '<div id="loading">' +
+                  '<div class="agency-or-porn-logo"></div>' +
+                '</div>'
         };
     });
 
