@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Agency or Porn"
+AuthUserFile /home2/creative/agencyorporn/.htpasswd
+Require valid-user
