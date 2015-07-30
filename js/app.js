@@ -28,12 +28,13 @@
         });
     });
 
-    app.controller('QuestionCtrl', function($scope, $routeParams, Image, Question) {
+    app.controller('QuestionCtrl', function($scope, $routeParams, Image, Question, Score) {
         $scope.loaded = false;
         $scope.correct = 'unknown';
         $scope.current = {};
         $scope.next = {};
         $scope.image = {};
+        $scope.score = Score.get();
 
         var init = Question.init($routeParams.slug);
         init.then(function(state) {
@@ -54,7 +55,14 @@
         });
 
         $scope.select = function(selection) {
-            $scope.correct = (selection === $scope.current.answer) ? 'yes' : 'no';
+            if (selection === $scope.current.answer) {
+                $scope.correct = 'yes';
+                Score.incrementRight();
+            } else {
+                $scope.correct = 'no';
+                Score.incrementWrong();
+            }
+            $scope.score = Score.get();
             $scope.$broadcast('play', $scope.correct);
         };
     });
@@ -159,6 +167,25 @@
                     a: 'img/a-' + _as[_index] + '.jpg',
                     p: 'img/p-' + _ps[_index] + '.jpg'
                 };
+            }
+        };
+    }]);
+
+    app.factory('Score', [function() {
+        var _score = {
+            right: 0,
+            wrong: 0
+        };
+
+        return {
+            incrementRight: function() {
+                _score.right++;
+            },
+            incrementWrong: function() {
+                _score.wrong++;
+            },
+            get: function() {
+                return _score;
             }
         };
     }]);

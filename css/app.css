@@ -291,6 +291,29 @@ h3 a:hover, h3 a:active{
   line-height: 20px;
 }
 
+.score-wrapper {
+  background: white;
+  border-radius: 5px;
+  left: 0;
+  margin: auto;
+  padding: 5px 0;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 160px;
+  z-index: 10;
+}
+.score {
+  color: rgb(239,102,148);
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 700;
+}
+.score img {
+  height: 32px;
+  width: 32px;
+}
+
 /* Angular Animate FADE*/
 .fade.ng-animate {
   transition: opacity 1s ease-in-out;
@@ -478,6 +501,19 @@ h3 a:hover, h3 a:active{
   }
   button.next:hover, .button.next:hover, button.next:active, .button.next:active{
     opacity: 0.8;
+  }
+
+  .score-wrapper {
+    padding: 5px 0;
+    top: 110px;
+    width: 200px;
+  }
+  .score {
+    font-size: 32px;
+  }
+  .score img {
+    height: 40px;
+    width: 40px;
   }
 }
 
