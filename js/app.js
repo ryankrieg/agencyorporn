@@ -172,20 +172,21 @@
     }]);
 
     app.factory('Score', [function() {
-        var _score = {
-            right: 0,
-            wrong: 0
-        };
+        var _right = 0;
+        var _wrong = 0;
 
         return {
             incrementRight: function() {
-                _score.right++;
+                _right++;
             },
             incrementWrong: function() {
-                _score.wrong++;
+                _wrong++;
             },
             get: function() {
-                return _score;
+                return {
+                    right: (_right < 10) ? '0' + _right : _right.toString(),
+                    wrong: (_wrong < 10) ? '0' + _wrong : _wrong.toString()
+                };
             }
         };
     }]);
