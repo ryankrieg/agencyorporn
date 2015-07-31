@@ -23,6 +23,10 @@
         init.then(function(state) {
             $scope.state = state;
             $scope.current = Question.getCurrent();
+
+            if (state === 'loaded') {
+                angular.element('#footer').addClass('show');
+            }
         }, function(state) {
             $scope.state = state;
         });
