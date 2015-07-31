@@ -314,6 +314,17 @@ h3 a:hover, h3 a:active{
   width: 32px;
 }
 
+.correct {
+  font-size: 28px;
+  font-weight: 700;
+}
+.question-agency .correct {
+  color: rgb(239,102,148);
+}
+.question-porn .correct {
+  color: white;
+}
+
 /* Angular Animate FADE*/
 .fade.ng-animate {
   transition: opacity 1s ease-in-out;

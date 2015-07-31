@@ -34,6 +34,10 @@
             <div data-ng-switch-default class="vert-centered">
               <div data-ng-switch="current.answer">
                 <div data-ng-switch-when="porn" class="fade-slow">
+                  <div data-ng-switch="correct" class="correct">
+                    <div data-ng-switch-when="yes">YOU&rsquo;RE RIGHT</div>
+                    <div data-ng-switch-when="no">YOU&rsquo;RE WRONG</div>
+                  </div>
                   <div class="question-year">
                     <span data-ng-bind="current.year"></span>
                     <span> / Starring</span>
@@ -66,6 +70,10 @@
             <div data-ng-switch-default class="vert-centered">
               <div data-ng-switch="current.answer">
                 <div data-ng-switch-when="agency" class="fade-slow">
+                  <div data-ng-switch="correct" class="correct">
+                    <div data-ng-switch-when="yes">YOU&rsquo;RE RIGHT</div>
+                    <div data-ng-switch-when="no">YOU&rsquo;RE WRONG</div>
+                  </div>
                   <div class="question-url">
                     <a data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
                   </div>
