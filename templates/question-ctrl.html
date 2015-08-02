@@ -39,8 +39,11 @@
                     <div data-ng-switch-when="no">YOU&rsquo;RE WRONG</div>
                   </div>
                   <div class="question-year">
-                    <span data-ng-bind="current.year"></span>
-                    <span> / Starring</span>
+                    <a data-ng-href="http://{{ current.url }}" target="_blank">
+                      <span data-ng-bind="current.title"></span>
+                      <span> / </span>
+                      <span data-ng-bind="current.year"></span>
+                    </a>
                   </div>
                   <div class="question-cast">
                     <div class="row">

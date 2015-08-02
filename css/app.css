@@ -484,6 +484,12 @@ h3 a:hover, h3 a:active{
     margin-bottom: 10px;
     line-height: 24px;
   }
+  .question-year a, .question-year a:visited{
+    line-height: 24px;
+  }
+  .question-year a:hover, .question-year a:active{
+    text-decoration: underline;
+  }
   .question-cast{
     line-height: 24px;
   }
