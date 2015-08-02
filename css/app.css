@@ -42,10 +42,6 @@ h4{
 
 }
 
-h5{
-
-}
-
 button, .button, button:visited, .button:visited, button.disabled, .button.disabled{
   display: block;
   width: 126px;
@@ -223,6 +219,7 @@ h3 a:hover, h3 a:active{
   top: 0;
   width: 100%;
   height: 100%;
+  padding: 60px 0 0 0;
   text-align: center;
 }
 .question-circle {
@@ -250,7 +247,7 @@ h3 a:hover, h3 a:active{
 .question-half .vert-centered{
   position: absolute;
   width: 100%;
-  height: 165px;
+  height: 200px;
   margin: auto;
   vertical-align: middle;
   overflow: hidden;
@@ -265,15 +262,22 @@ h3 a:hover, h3 a:active{
 }
 .question-image {
   display: block;
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 5px auto;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+}
+h5{
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 13px;
 }
 .question-agency{
   background-color: #F2F2F3;
 }
 .question-agency .vert-centered{
-  top: 60px;
+  top: 0;
   bottom: 0;
 }
 .question-porn{
@@ -281,7 +285,7 @@ h3 a:hover, h3 a:active{
 }
 .question-porn .vert-centered{
   top: 0;
-  bottom: 58px;
+  bottom: 0;
 }
 .question-year{
   margin-bottom: 10px;
@@ -318,7 +322,15 @@ h3 a:hover, h3 a:active{
   font-size: 13px;
   line-height: 20px;
 }
-
+.question-agency h5{
+  color: #EF6694;
+}
+.question-agency .correct {
+  color: #EF6694;
+}
+.question-porn .correct {
+  color: white;
+}
 .score-wrapper {
   z-index: 10;
   position: absolute;
@@ -358,17 +370,6 @@ h3 a:hover, h3 a:active{
 }
 .score-wrong{
   background-color: #F2F2F3;
-}
-
-.correct {
-  font-size: 28px;
-  font-weight: 700;
-}
-.question-agency .correct {
-  color: #EF6694;
-}
-.question-porn .correct {
-  color: white;
 }
 
 /* Angular Animate FADE*/
@@ -492,6 +493,7 @@ h3 a:hover, h3 a:active{
   }
   .question-wrapper{
     height: 100%;
+    padding: 0;
     background-image: url('../img/question-bg.png');
     background-position: top center;
     background-repeat: repeat-y;
@@ -529,8 +531,13 @@ h3 a:hover, h3 a:active{
     height: 300px;
     margin: auto;
   }
-  .question-year{
+  h5{
     margin-top: 100px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .question-year{
     margin-bottom: 10px;
     line-height: 24px;
   }
@@ -544,7 +551,6 @@ h3 a:hover, h3 a:active{
     line-height: 24px;
   }
   .question-url{
-    margin-top: 100px;
     margin-bottom: 10px;
   }
   .question-url a, .question-url a:visited{
