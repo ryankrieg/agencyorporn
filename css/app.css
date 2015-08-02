@@ -4,6 +4,7 @@ html{
 }
 
 body{
+  margin-bottom: 120px;
   background-color: rgba(239,102,148,1);
   color: #231f20;
   font-family: 'Open Sans', Helvetica Neue, Helvetica, arial, sans-serif;
@@ -96,11 +97,11 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
 .fixed-footer{
   opacity: 0;
   z-index: 2;
-  position: fixed;
+  position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -120px;
   left: 0;
-  height: 58px;
+  height: 120px;
   padding: 10px 5px;
   background: white;
   transition: opacity 1s ease-in-out;
@@ -110,14 +111,13 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
 }
 /* Footer copy */
 h3{
-  float: left;
-  display: inline-block;
+  display: block;
   color: #58595B;
-  font-size: 9px;
+  font-size: 10px;
   font-style: italic;
-  letter-spacing: 1.2px;
-  line-height: 40px;
-  text-align: left;
+  letter-spacing: 2px;
+  line-height: 10px;
+  text-align: center;
 }
 h3 a, h3 a:visited{
   color: #58595B;
@@ -128,22 +128,21 @@ h3 a:hover, h3 a:active{
 
 /* SHARE BUTTONS */
 .social-buttons{
-  float: left;
-  display: inline-block;
-  width: 100px;
-  margin: -8px 0 0 10px;
+  display: block;
+  width: auto;
+  margin: 20px 0 0 0;
 }
 .social-buttons a{
   color: rgba(0,0,0,0);
 }
 .facebook-share{
-  float: left;
-  display: inline-block;
+  display: block;
+  text-align: center;
 }
 .twitter-share{
-  float: left;
-  display: inline-block;
-  margin: 5px 0 0 0;
+  display: block;
+  margin: 15px 0 0 0;
+  text-align: center;
 }
 
 /* START PAGE */
@@ -373,6 +372,9 @@ h3 a:hover, h3 a:active{
 
 /* Desktop = Larger than Landscape iPad */
 @media only screen and (min-width: 1024px) {
+  body{
+    margin-bottom: 0;
+  }
   .agency-or-porn-logo{
     position: absolute;
     top: 150px;
@@ -397,15 +399,13 @@ h3 a:hover, h3 a:active{
     line-height: 24px;
   }
   .fixed-footer{
+    position: fixed;
+    bottom: 0;
     height: 48px;
     padding: 10px;
   }
   /* Footer copy */
   h3{
-    float: none;
-    display: block;
-    font-size: 10px;
-    text-align: center;
     line-height: 30px;
     letter-spacing: 3px;
   }
@@ -415,19 +415,19 @@ h3 a:hover, h3 a:active{
     position: absolute;
     top: 0;
     right: 0;
-    float: none;
-    display: block;
     width: 260px;
     margin: 10px 0 0 0;
   }
   .facebook-share{
     float: left;
     display: inline-block;
+    text-align: left;
   }
   .twitter-share{
     float: left;
     display: inline-block;
     margin: 3px 0 0 10px;
+    text-align: left;
   }
 
   #question h2 {
@@ -445,14 +445,11 @@ h3 a:hover, h3 a:active{
     background-size: 2560px 1px;
   }
   .question-circle {
-    top: 70px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100px;
-    height: 100px;
-    background-image: url('../img/agency-or-porn-logo-white.png');
-    background-size: 100px 100px;
+    top: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background-size: 60px 60px;
   }
   .question-circle img{
     width: 40px;
