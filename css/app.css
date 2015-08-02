@@ -5,7 +5,7 @@ html{
 
 body{
   margin-bottom: 120px;
-  background-color: rgba(239,102,148,1);
+  background-color: #f06796;
   color: #231f20;
   font-family: 'Open Sans', Helvetica Neue, Helvetica, arial, sans-serif;
   font-weight: normal;
@@ -31,7 +31,7 @@ h1{
 
 /* Home copy */
 h2{
-  color: rgba(239,102,148,1);
+  color: #EF6694;
   font-size: 24px;
   font-style: italic;
   line-height: 60px;
@@ -177,6 +177,7 @@ h3 a:hover, h3 a:active{
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 100%;
 }
@@ -281,7 +282,7 @@ h5{
   bottom: 0;
 }
 .question-porn{
-  background-color: rgba(239,102,148,1);
+  background-color: #EF6694;
 }
 .question-porn .vert-centered{
   top: 0;
@@ -437,9 +438,8 @@ h5{
   }
   #start .container{
     background-image: url('../img/legs-horizontal.jpg');
-    background-position: right bottom;
-    background-size: 940px 590px;
-    /*background-size: contain;*/
+    background-size: 100% auto;
+    background-position: center bottom 48px;
   }
   #start .start-wrapper .agency-or-porn-logo{
     top: -78px;
@@ -617,7 +617,58 @@ h5{
 
 }
 
-/* Desktop = Browser Height smaller than 550px */
-@media only screen and (max-height: 550px) {
+/* Desktop = Browser Height bigger than 550px */
+@media only screen and (min-width: 1024px), @media only screen and (min-height: 550px) {
+  /*----------------- CHANGE THE SIZE BELOW THIS TO FIT ANY HEIGHT!! -----------------*/
+  .question-half .vert-centered{
+    height: 360px;
+  }
+  .question-image {
+    width: 300px;
+    height: 300px;
+  }
+}
 
+/* Desktop = Browser Height bigger than 610px */
+@media only screen and (min-width: 1024px), @media only screen and (min-height: 610px) {
+  .question-half .vert-centered{
+    height: 400px;
+  }
+  .question-image {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+/* Desktop = Browser Height bigger than 690px */
+@media only screen and (min-width: 1024px), @media only screen and (min-height: 710px) {
+  .question-half .vert-centered{
+    height: 460px;
+  }
+  .question-image {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* Desktop = Browser Height bigger than 790px */
+@media only screen and (min-width: 1024px), @media only screen and (min-height: 810px) {
+  .question-half .vert-centered{
+    height: 560px;
+  }
+  .question-image {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+/* Desktop = Browser Height bigger than 910px */
+@media only screen and (min-width: 1024px), @media only screen and (min-height: 910px) {
+  .question-half .vert-centered{
+    height: 660px;
+  }
+  .question-image {
+    width: 600px;
+    height: 600px;
+  }
 }
