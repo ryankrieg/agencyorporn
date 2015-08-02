@@ -115,12 +115,14 @@ h3{
   color: #58595B;
   font-size: 10px;
   font-style: italic;
+  font-weight: 600;
   letter-spacing: 2px;
   line-height: 10px;
   text-align: center;
 }
 h3 a, h3 a:visited{
   color: #58595B;
+  font-weight: 600;
 }
 h3 a:hover, h3 a:active{
   color: #000;
