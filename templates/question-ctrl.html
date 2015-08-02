@@ -8,17 +8,18 @@
         <div class="question-circle">
         </div>
       </a>
-      <div class="question-wrapper">
-        <div class="score-wrapper">
-          <div class="score">
-            <img src="img/icon-check.png"/>
-            <span data-ng-bind="score.right"></span>
-          </div>
-          <div class="score">
-            <img src="img/icon-cross.png"/>
-            <span data-ng-bind="score.wrong"></span>
-          </div>
+      <div class="score-wrapper">
+        <div class="score score-right">
+          <img class="pink-check" src="img/icon-check.png"/>
+          <img class="white-check" src="img/icon-check-white.png"/>
+          <span data-ng-bind="score.right"></span>
         </div>
+        <div class="score score-wrong">
+          <img src="img/icon-cross.png"/>
+          <span data-ng-bind="score.wrong"></span>
+        </div>
+      </div>
+      <div class="question-wrapper">
         <div class="row">
           <!-- AGENCY -->
           <div class="question-half question-agency large-6 columns" data-ng-switch="correct" data-ng-animate-children>
