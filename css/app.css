@@ -399,9 +399,6 @@ h5{
 }
 
 @media only screen and (min-device-height: 460px) {
-  body{
-    margin-bottom: 120px;
-  }
   #loading .agency-or-porn-logo{
     display: block;
     position: absolute;
