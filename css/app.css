@@ -398,7 +398,7 @@ h5{
   opacity: 0;
 }
 
-@media only screen and (min-height: 460px) {
+@media only screen and (min-device-height: 460px) {
   body{
     margin-bottom: 120px;
   }
