@@ -4,6 +4,7 @@ html{
 }
 
 body{
+  margin-bottom: 120px;
   background-color: #f06796;
   color: #231f20;
   font-family: 'Open Sans', Helvetica Neue, Helvetica, arial, sans-serif;
@@ -75,10 +76,16 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
 }
 #loading .agency-or-porn-logo{
   display: block;
-  position: relative;
-  margin-top: 30px;
+  position: absolute;
+  top: -252px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
   -webkit-animation: logo-fade-in 0.5s ease-in 0s 1 normal;
   animation: logo-fade-in 0.5s ease-in 0s 1 normal;
+  /*-webkit-animation: logo-slide-out 1s ease-in 0s 1 normal;
+  animation: logo-slide-out 1s ease-in 0s 1 normal;*/
 }
 @-webkit-keyframes logo-fade-in {
     0%   {opacity: 0;}
@@ -102,9 +109,9 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
 .fixed-footer{
   opacity: 0;
   z-index: 2;
-  position: relative;
+  position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -120px;
   left: 0;
   height: 120px;
   padding: 10px 5px;
@@ -154,12 +161,12 @@ h3 a:hover, h3 a:active{
 
 /* START PAGE */
 #start{
-  height: auto;
+  height: 100%;
 }
 #start .container{
-  position: relative;
+  position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
   background-image: url('../img/legs-vertical.jpg');
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -167,9 +174,12 @@ h3 a:hover, h3 a:active{
   background-size: contain;
 }
 #start .start-wrapper{
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100%;
-  padding: 30px 0;
 }
 /* Title */
 #start h2{
@@ -192,9 +202,9 @@ h3 a:hover, h3 a:active{
 
 }
 #question .container{
-  position: relative;
+  position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 #question .container .row{
   height: 100%;
@@ -206,11 +216,11 @@ h3 a:hover, h3 a:active{
 }
 .question-wrapper {
   z-index: 1;
-  position: relative;
-  top: auto;
+  position: absolute;
+  top: 0;
   width: 100%;
-  height: auto;
-  padding: 0;
+  height: 100%;
+  padding: 60px 0 0 0;
   text-align: center;
 }
 .question-circle {
@@ -232,25 +242,24 @@ h3 a:hover, h3 a:active{
   margin: 10px;
 }
 .question-half{
-  height: auto;
-  min-height: 260px;
-  padding: 20px 0;
+  height: 50%;
+  padding: 0;
 }
 .question-half .vert-centered{
-  position: relative;
+  position: absolute;
   width: 100%;
-  height: auto;
+  height: 200px;
   margin: auto;
   vertical-align: middle;
   overflow: hidden;
 }
 .question-half button, .question-half .button{
-  position: relative;
+  position: absolute;
   top: auto;
   right: 0;
   left: 0;
   bottom: 0px;
-  margin: 20px auto auto auto;
+  margin: auto;
 }
 .question-image {
   display: block;
@@ -396,60 +405,6 @@ h5{
 }
 .fade-slow.ng-leave.ng-leave-active {
   opacity: 0;
-}
-
-@media only screen and (min-device-height: 460px) {
-  #loading .agency-or-porn-logo{
-    display: block;
-    position: absolute;
-    top: -252px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-  }
-  #start{
-    height: 100%;
-  }
-  #start .container {
-    position: absolute;
-    height: 100%;
-  }
-  #start .start-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    padding: 0;
-  }
-  .fixed-footer{
-    position: absolute;
-    bottom: -120px;
-  }
-  #question .container{
-    position: absolute;
-    height: 100%;
-  }
-  .question-wrapper{
-    position: absolute;
-    top: 0;
-    height: 100%;
-    padding: 60px 0 0 0;
-  }
-  .question-half{
-    height: 50%;
-    min-height: auto;
-    padding: 0;
-  }
-  .question-half .vert-centered{
-    position: absolute;
-    height: 200px;
-  }
-  .question-half button, .question-half .button{
-    position: absolute;
-    margin: auto;
-  }
 }
 
 /* Background Max */
@@ -663,7 +618,7 @@ h5{
 }
 
 /* Desktop = Browser Height bigger than 550px */
-@media only screen and (min-width: 1024px) and (min-height: 550px) {
+@media only screen and (min-width: 1024px), @media only screen and (min-height: 550px) {
   /*----------------- CHANGE THE SIZE BELOW THIS TO FIT ANY HEIGHT!! -----------------*/
   .question-half .vert-centered{
     height: 360px;
@@ -675,7 +630,7 @@ h5{
 }
 
 /* Desktop = Browser Height bigger than 610px */
-@media only screen and (min-width: 1024px) and (min-height: 610px) {
+@media only screen and (min-width: 1024px), @media only screen and (min-height: 610px) {
   .question-half .vert-centered{
     height: 400px;
   }
@@ -686,7 +641,7 @@ h5{
 }
 
 /* Desktop = Browser Height bigger than 690px */
-@media only screen and (min-width: 1024px) and (min-height: 710px) {
+@media only screen and (min-width: 1024px), @media only screen and (min-height: 710px) {
   .question-half .vert-centered{
     height: 460px;
   }
@@ -697,7 +652,7 @@ h5{
 }
 
 /* Desktop = Browser Height bigger than 790px */
-@media only screen and (min-width: 1024px) and (min-height: 810px) {
+@media only screen and (min-width: 1024px), @media only screen and (min-height: 810px) {
   .question-half .vert-centered{
     height: 560px;
   }
@@ -708,7 +663,7 @@ h5{
 }
 
 /* Desktop = Browser Height bigger than 910px */
-@media only screen and (min-width: 1024px) and (min-height: 910px) {
+@media only screen and (min-width: 1024px), @media only screen and (min-height: 910px) {
   .question-half .vert-centered{
     height: 660px;
   }
