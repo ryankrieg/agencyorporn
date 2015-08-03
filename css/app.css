@@ -420,7 +420,7 @@ h5{
 }
 
 /* Desktop = Larger than Landscape iPad */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
   body{
     margin-bottom: 0;
   }
@@ -618,7 +618,7 @@ h5{
 }
 
 /* Desktop = Browser Height bigger than 550px */
-@media only screen and (min-width: 1024px) and (min-height: 550px) {
+@media only screen and (min-width: 1025px) and (min-height: 550px) {
   #question h2 {
     line-height: 120px;
   }
@@ -642,7 +642,7 @@ h5{
 }
 
 /* Desktop = Browser Height bigger than 610px */
-@media only screen and (min-width: 1024px) and (min-height: 610px) {
+@media only screen and (min-width: 1025px) and (min-height: 610px) {
   .question-half .vert-centered{
     height: 400px;
   }
@@ -653,7 +653,7 @@ h5{
 }
 
 /* Desktop = Browser Height bigger than 690px */
-@media only screen and (min-width: 1024px) and (min-height: 710px) {
+@media only screen and (min-width: 1025px) and (min-height: 710px) {
   .question-half .vert-centered{
     height: 460px;
   }
@@ -664,7 +664,7 @@ h5{
 }
 
 /* Desktop = Browser Height bigger than 790px */
-@media only screen and (min-width: 1024px) and (min-height: 810px) {
+@media only screen and (min-width: 1025px) and (min-height: 810px) {
   .question-half .vert-centered{
     height: 560px;
   }
@@ -675,7 +675,7 @@ h5{
 }
 
 /* Desktop = Browser Height bigger than 910px */
-@media only screen and (min-width: 1024px) and (min-height: 910px) {
+@media only screen and (min-width: 1025px) and (min-height: 910px) {
   .question-half .vert-centered{
     height: 660px;
   }
