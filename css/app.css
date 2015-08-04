@@ -248,7 +248,7 @@ h3 a:hover, h3 a:active{
 .question-half .vert-centered{
   position: absolute;
   width: 100%;
-  height: 180px;
+  height: 140px;
   margin: auto;
   vertical-align: middle;
   overflow: hidden;
@@ -263,8 +263,8 @@ h3 a:hover, h3 a:active{
 }
 .question-image {
   display: block;
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   margin: 0 auto;
 }
 h5{
@@ -318,10 +318,26 @@ h5{
   line-height: 20px;
 }
 .question-description{
+  overflow: hidden;
+  position: relative;
+  height: 60px;
   padding-right: 10px;
   padding-left: 10px;
   font-size: 13px;
   line-height: 20px;
+}
+.question-description-quote{
+
+}
+.question-description-text{
+  height: 60px;
+}
+.question-description-ellipsis{
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+  padding: 0 0 0 5px;
+  background-color: #EF6694;
 }
 .question-agency h5{
   color: #EF6694;
@@ -416,6 +432,18 @@ h5{
     width: 140px;
     height: 140px;
   }
+  .question-description{
+    height: auto;
+  }
+  .question-description-quote{
+
+  }
+  .question-description-text{
+    height: auto;
+  }
+  .question-description-ellipsis{
+    display: none;
+  }
 }
 
 /* Background Max */
@@ -506,8 +534,8 @@ h5{
     background-size: 2560px 1px;
   }
   .question-circle {
-    top: 30px;
-    left: 30px;
+    top: 10px;
+    left: 10px;
     width: 60px;
     height: 60px;
     background-size: 60px 60px;
@@ -629,8 +657,8 @@ h5{
     line-height: 120px;
   }
   .question-circle {
-    top: 10px;
-    left: 10px;
+    top: 30px;
+    left: 30px;
   }
   .score-wrapper {
     top: 120px;

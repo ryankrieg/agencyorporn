@@ -77,9 +77,10 @@
                     <a data-ng-href="http://{{ current.url }}" target="_blank" data-ng-bind="current.url"></a>
                   </div>
                   <div class="question-description">
-                    <span>&lsquo;</span>
-                    <span data-ng-bind="current.description"></span>
-                    <span>&rsquo;</span>
+                    <span class="question-description-quote">&lsquo;</span>
+                    <span data-ng-bind="current.description" class="question-description-text"></span>
+                    <span class="question-description-quote">&rsquo;</span>
+                    <span class="question-description-ellipsis">…</span>
                   </div>
                   <a data-ng-href="#/{{ next.slug }}" class="button next"><img src="img/button-next-white.png"/></a>
                 </div>
