@@ -78,12 +78,17 @@
             },
             link: function(scope, element, attrs) {
                 var audio = angular.element('<audio/>');
-                var source = angular.element('<source/>');
+                var ogg = angular.element('<source/>');
+                var mp3 = angular.element('<source/>');
 
-                source.attr('type', 'audio/mpeg');
-                source.attr('src', 'audio/' + scope.correct + '.mp3');
+                ogg.attr('type', 'audio/ogg');
+                ogg.attr('src', 'audio/' + scope.correct + '.ogg');
 
-                audio.append(source);
+                mp3.attr('type', 'audio/mpeg');
+                mp3.attr('src', 'audio/' + scope.correct + '.mp3');
+
+                audio.append(ogg);
+                audio.append(mp3);
                 element.append(audio);
 
                 scope.$on('play', function(evt, correct) {
