@@ -318,9 +318,8 @@ h5{
   line-height: 20px;
 }
 .question-description{
-  overflow: hidden;
+  opacity: 0;
   position: relative;
-  height: 60px;
   padding-right: 10px;
   padding-left: 10px;
   font-size: 13px;
@@ -328,16 +327,6 @@ h5{
 }
 .question-description-quote{
 
-}
-.question-description-text{
-  height: 60px;
-}
-.question-description-ellipsis{
-  position: absolute;
-  right: 10px;
-  bottom: 0;
-  padding: 0 0 0 5px;
-  background-color: #EF6694;
 }
 .question-agency h5{
   color: #EF6694;
@@ -433,16 +422,7 @@ h5{
     height: 140px;
   }
   .question-description{
-    height: auto;
-  }
-  .question-description-quote{
-
-  }
-  .question-description-text{
-    height: auto;
-  }
-  .question-description-ellipsis{
-    display: none;
+    opacity: 1;
   }
 }
 
@@ -594,6 +574,7 @@ h5{
     text-decoration: underline;
   }
   .question-description{
+    opacity: 1;
     max-width: 350px;
     margin: 0 auto;
     padding-right: 0;
@@ -666,12 +647,15 @@ h5{
   .question-half .vert-centered{
     height: 360px;
   }
+  .question-half button, .question-half .button{
+    bottom: 20px;
+  }
   .question-image {
     width: 300px;
     height: 300px;
   }
   h5{
-    margin-top: 100px;
+    margin-top: 40px;
   }
 }
 
