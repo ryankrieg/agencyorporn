@@ -248,7 +248,7 @@ h3 a:hover, h3 a:active{
 .question-half .vert-centered{
   position: absolute;
   width: 100%;
-  height: 140px;
+  height: 28px;
   margin: auto;
   vertical-align: middle;
   overflow: hidden;
@@ -320,7 +320,9 @@ h5{
 }
 .question-description{
   opacity: 0;
+  max-width: 350px;
   position: relative;
+  margin: 0 auto;
   padding-right: 10px;
   padding-left: 10px;
   font-size: 13px;
@@ -427,10 +429,17 @@ h5{
   }
 }
 
-/* Background Max */
+/* Background Max & iPad */
 @media only screen and (min-width: 528px) {
   #start .container{
     background-size: 528px 825px;
+  }
+  .question-half .vert-centered{
+    height: 280px;
+  }
+  .question-image {
+    width: 240px;
+    height: 240px;
   }
 }
 
@@ -577,7 +586,6 @@ h5{
   }
   .question-description{
     opacity: 1;
-    max-width: 350px;
     margin: 0 auto;
     padding-right: 0;
     padding-left: 0;
@@ -657,7 +665,7 @@ h5{
     height: 300px;
   }
   h5{
-    margin-top: 40px;
+    margin-top: 80px;
   }
 }
 
@@ -681,6 +689,9 @@ h5{
     width: 400px;
     height: 400px;
   }
+  h5{
+    margin-top: 120px;
+  }
 }
 
 /* Desktop = Browser Height bigger than 790px */
@@ -692,6 +703,9 @@ h5{
     width: 500px;
     height: 500px;
   }
+  h5{
+    margin-top: 180px;
+  }
 }
 
 /* Desktop = Browser Height bigger than 910px */
@@ -702,5 +716,8 @@ h5{
   .question-image {
     width: 600px;
     height: 600px;
+  }
+  h5{
+    margin-top: 220px;
   }
 }
