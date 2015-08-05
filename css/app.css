@@ -298,6 +298,7 @@ h5{
   line-height: 20px;
 }
 .question-cast{
+  opacity: 0;
   font-size: 14px;
   line-height: 20px;
 }
@@ -324,9 +325,6 @@ h5{
   padding-left: 10px;
   font-size: 13px;
   line-height: 20px;
-}
-.question-description-quote{
-
 }
 .question-agency h5{
   color: #EF6694;
@@ -413,7 +411,7 @@ h5{
 }
 
 /* Background Max */
-@media only screen and (min-height: 480px) {
+@media only screen and (min-height: 460px) {
   .question-half .vert-centered{
     height: 180px;
   }
@@ -422,6 +420,9 @@ h5{
     height: 140px;
   }
   .question-description{
+    opacity: 1;
+  }
+  .question-cast{
     opacity: 1;
   }
 }
@@ -562,6 +563,7 @@ h5{
     text-decoration: underline;
   }
   .question-cast{
+    opacity: 1;
     line-height: 24px;
   }
   .question-url{
