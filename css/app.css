@@ -1,6 +1,6 @@
 /* GLOBAL STYLES */
 html{
-
+  overflow-x: hidden;
 }
 
 body{
@@ -84,8 +84,6 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
   margin: auto;
   -webkit-animation: logo-fade-in 0.5s ease-in 0s 1 normal;
   animation: logo-fade-in 0.5s ease-in 0s 1 normal;
-  /*-webkit-animation: logo-slide-out 1s ease-in 0s 1 normal;
-  animation: logo-slide-out 1s ease-in 0s 1 normal;*/
 }
 @-webkit-keyframes logo-fade-in {
     0%   {opacity: 0;}
@@ -95,16 +93,6 @@ button.disabled:hover, .button.disabled:hover, button.disabled:active, .button.d
     0%   {opacity: 0;}
     100% {opacity: 1;}
 }
-/*
-@-webkit-keyframes logo-slide-out {
-    0%   {transform: translate(-50%, -50%);}
-    100% {transform: translate(-50%, -200%);}
-}
-@keyframesopacity: 0; logo-slide-out {
-    0%   {transform: translate(-50%, -50%);}
-    100% {transform: translate(-50%, -200%);}
-}
-*/
 
 .fixed-footer{
   opacity: 0;
